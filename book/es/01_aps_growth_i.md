@@ -28,7 +28,7 @@ Para los estudiantes de la Universidad de Salamanca (Grados en Ingeniería Infor
 - Fomentar la empatía y la comprensión hacia las personas con necesidades diversas.
 - Promover el trabajo en equipo y la colaboración interdisciplinar.
 
-## Cronograma e Impacto
+## Impacto
 
 La planificación se extendió a lo largo de todo el curso académico, garantizando que cada fase (desde el diseño inicial hasta el despliegue físico de las balizas en el huerto) se cumpliera a tiempo.
 

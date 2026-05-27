@@ -28,7 +28,7 @@ For the students of the University of Salamanca (Degrees in Computer Engineering
 - Foster empathy and understanding towards people with diverse needs.
 - Promote teamwork and interdisciplinary collaboration.
 
-## Schedule and Impact
+## Impact
 
 Planning spanned the entire academic year, ensuring that each phase (from the initial design to the physical deployment of beacons in the garden) was completed on time.
 

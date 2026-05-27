@@ -6,8 +6,14 @@ html {
 /* Base Styles & Layout Consistency */
 :root {
     --pst-content-width: 60rem;
-    --usal-blue: #003153;
-    --usal-blue-light: #004a7c;
+    --usal-blue: #51ad39; /* Changed from blue to logo green */
+    --usal-blue-light: #408d2b;
+    --pst-color-primary: #51ad39; /* Set primary theme color */
+}
+
+/* Make titles green */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--pst-color-primary) !important;
 }
 
 /* Ensure homogeneous article width */

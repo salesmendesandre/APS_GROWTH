@@ -4,11 +4,18 @@ html {
 }
 
 /* Base Styles & Layout Consistency */
-:root {
+:root,
+html[data-theme="light"],
+html[data-theme="dark"] {
     --pst-content-width: 60rem;
     --usal-blue: #51ad39; /* Changed from blue to logo green */
     --usal-blue-light: #408d2b;
-    --pst-color-primary: #51ad39; /* Set primary theme color */
+    
+    /* Force Sphinx Theme Primary Colors */
+    --pst-color-primary: #51ad39 !important; 
+    --pst-color-secondary: #408d2b !important;
+    --pst-color-link: #51ad39 !important;
+    --pst-color-info: #51ad39 !important;
 }
 
 /* Make titles green */

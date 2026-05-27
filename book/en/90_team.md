@@ -129,14 +129,14 @@ Responsible for water stress analysis, study of environmental parameters, and ec
 
 ---
 
-## Lorenzo Milani Vocational Training Center
+## Inclusive Garden Ecosystem (Lorenzo Milani Center and SAS)
 
 ```{image} ../_static/team/milani_logo.png
 :width: 250px
 :align: center
 ```
 
-The fundamental link between technological development and the user community of the inclusive garden.
+The fundamental link between technological development and the user community. The real working ecosystem encompasses both the **Lorenzo Milani Vocational Training Center** and the **inclusive garden of the Social Affairs Service (SAS)** at USAL.
 
 ::::{grid} 1 2 2 2
 :gutter: 3

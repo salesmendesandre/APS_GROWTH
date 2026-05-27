@@ -10,3 +10,6 @@ parts:
   - caption: Team
     chapters:
     - file: en/90_team
+  - caption: References
+    chapters:
+    - file: en/99_bibliography

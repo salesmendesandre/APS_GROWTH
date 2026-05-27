@@ -10,3 +10,6 @@ parts:
   - caption: Equipo
     chapters:
     - file: es/90_responsables
+  - caption: Referencias
+    chapters:
+    - file: es/99_bibliografia

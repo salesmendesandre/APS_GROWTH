@@ -129,14 +129,14 @@ Responsables del análisis de estrés hídrico, estudio de los parámetros ambie
 
 ---
 
-## Centro Privado de Formación Profesional Lorenzo Milani
+## Ecosistema de Huertos Inclusivos (Centro Lorenzo Milani y SAS)
 
 ```{image} ../_static/team/milani_logo.png
 :width: 250px
 :align: center
 ```
 
-Nexo fundamental entre el desarrollo tecnológico y la comunidad usuaria del huerto inclusivo.
+Nexo fundamental entre el desarrollo tecnológico y la comunidad usuaria. El ecosistema real de trabajo abarca tanto el **Centro Privado de Formación Profesional Lorenzo Milani** como la **huertita inclusiva del Servicio de Asuntos Sociales (SAS)** de la USAL.
 
 ::::{grid} 1 2 2 2
 :gutter: 3

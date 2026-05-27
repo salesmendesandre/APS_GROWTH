@@ -6,20 +6,26 @@ A lo largo de sus distintas ediciones, el proyecto ha recibido el apoyo instituc
 
 A continuación, se detalla la financiación obtenida en cada una de las convocatorias del proyecto:
 
-## APS-GROWTH I (Convocatoria 2024-2025)
+## APS-GROWTH I
 
-En su primera edición, el proyecto sentó las bases tecnológicas y metodológicas, adquiriendo los primeros sensores, microcontroladores y herramientas básicas para el prototipado inicial.
+**Convocatoria 2024-2025**
+
+En su primera edición, el proyecto sentó las bases tecnológicas y de accesibilidad. Se adquirieron **balizas BLE (Bluetooth Low Energy)**, cajas estancas, códigos QR plastificados y soportes físicos para crear puntos de información interactivos en el huerto. Además, se adquirió una **estación meteorológica** para iniciar la monitorización ambiental básica del entorno.
 
 - **Financiación obtenida:** 860 €
 
-## APS-GROWTH II (Convocatoria 2025-2026)
+## APS-GROWTH II
 
-Durante esta anualidad, el proyecto se expandió para incluir módulos de comunicación de largo alcance (LoRa), sistemas de alimentación solar, baterías y nodos estancos para el despliegue en exteriores.
+**Convocatoria 2025-2026**
+
+Durante esta anualidad, el proyecto dio el salto hacia la red de sensores IoT remotos. El presupuesto se destinó a la compra de **nodos y un Gateway de comunicación LoRa** (largo alcance y bajo consumo) con antena exterior, así como **placas solares y baterías** para dotar a los dispositivos de autonomía energética. También se adquirió un despliegue completo de sensores agrícolas (humedad del suelo capacitiva, temperatura y humedad ambiente, y luminosidad) junto con las cajas estancas (IP65) y componentes electrónicos para su integración.
 
 - **Financiación obtenida:** 1.320 €
 
-## APS-GROWTH III (Convocatoria 2026-2027)
+## APS-GROWTH III
 
-En la presente anualidad, el enfoque se centra en la automatización completa, incluyendo electroválvulas, caudalímetros, la infraestructura hidráulica y los sistemas de protección e instalación eléctrica definitiva.
+**Convocatoria 2026-2027**
+
+En la presente anualidad, el enfoque se centra en la actuación física sobre el entorno mediante la **automatización completa del sistema de riego**. Las compras incluyen electroválvulas de 12V, caudalímetros, relés de control y microcontroladores LoRa. Además, se financia toda la infraestructura hidráulica necesaria (tuberías, derivaciones, llaves de paso) y los sistemas de protección, cableado eléctrico e instalación definitiva para operar en el exterior de forma segura y autónoma.
 
 - **Financiación obtenida:** 1.300 €

@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Inject PDF Button
-        injectPDFButton(languages, rootPrefix);
+        // injectPDFButton(languages, rootPrefix);
 
         // Search page fix: Sphinx search sometimes generates duplicated language prefixes
         // like /es/es/page.html or sidebar links like es/intro.html inside /es/search.html.

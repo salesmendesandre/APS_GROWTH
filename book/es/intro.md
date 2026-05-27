@@ -1,23 +1,29 @@
 # Introducción
 
-Bienvenido a **Elaboración de libros electrónicos mediante código y asistentes de Inteligencia Artificial**.
+Bienvenido a **APS-GROWTH**, una iniciativa de Aprendizaje-Servicio que aúna innovación tecnológica, inclusión social y sostenibilidad ambiental. 
 
-## ¿Qué es esto?
-Es el material del curso y una plantilla diseñada para que el profesorado de las **Facultades de Ciencias y de Ciencias Químicas de la USAL** pueda crear libros docentes interactivos de forma sencilla. La idea principal de esta plantilla es que sea lo suficientemente extensa para cubrir muchos casos de uso y que cada alumno la adapte a su propio curso, pero que a la vez esté lo suficientemente equipada para que se pueda usar de forma sencilla con la ayuda de asistentes de IA (como GitHub Copilot, Gemini, Claude, Codex, etc.) y con un editor de código como VS Code.
+## ¿Qué es el proyecto APS-GROWTH?
 
-## Contenido
-En este libro encontrarás:
-- [Tutoriales](01_tutorial/01_que_es_un_teachbook.md) para aprender a usar la plantilla
-- [Ejemplos por Grado](02_grados/grado_fisica/intro.md) para ver casos reales
-- Información sobre [cómo citar](92_como_citar.md) y [licencias](91_licencias.md)
+**APS-GROWTH** (Aplicación Multimodal para la Gestión y Aprendizaje Inclusivo de un Huerto Ecológico y Educativo) es un proyecto desarrollado de forma conjunta por estudiantes y profesores de las facultades de **Informática y Biología** de la Universidad de Salamanca (USAL), en estrecha colaboración con el **Centro Privado de Formación Profesional Lorenzo Milani**.
 
-## Versión PDF
+El proyecto nace con el objetivo de facilitar la gestión y el mantenimiento de un huerto inclusivo mediante tecnología accesible, asegurando que cualquier persona, independientemente de sus capacidades físicas o cognitivas, pueda participar activamente y aprender sobre horticultura y sostenibilidad de manera cada vez más autónoma.
 
-También puedes descargar la versión imprimible del libro:
+Para lograrlo, se ha planteado un esfuerzo interdisciplinar sin precedentes: mientras que el alumnado de Informática diseña la infraestructura de software, hardware e interfaces IoT, los estudiantes de Biología y Antropología aportan el rigor científico definiendo los umbrales de estrés hídrico y las necesidades vitales de cada especie vegetal.
 
-- [Descargar PDF en español](../_static/teachbook_es.pdf)
-- [Download PDF in English](../_static/teachbook_en.pdf)
+## Evolución del Proyecto
 
-```{note}
-Este proyecto está diseñado para ser usado con **VS Code** y asistentes de **IA**.
-```
+A lo largo de sus tres fases anuales, el proyecto ha ido creciendo en ambición y complejidad tecnológica para crear un ecosistema inteligente completo:
+
+- **APS-GROWTH I (Curso 2024-2025)**: Creación de la base tecnológica. Se desarrolló una aplicación web multimodal y accesible que permite identificar plantas mediante códigos QR y balizas de proximidad (BLE). La herramienta facilitó la notificación de tareas básicas (riego, deshierbe) y el registro de acciones, sentando las bases de la participación inclusiva.
+- **APS-GROWTH II (Curso 2025-2026)**: Integración de Internet de las Cosas (IoT). Se incorporaron sensores ambientales de bajo consumo conectados mediante tecnología LoRa/LoRaWAN para medir la humedad del suelo, temperatura y luz. Esto permitió pasar de la observación manual a la obtención de datos en tiempo real, generando alertas inteligentes y ofreciendo una visualización de datos adaptada a los usuarios del huerto.
+- **APS-GROWTH III (Curso 2026-2027)**: Automatización e inteligencia activa. El proyecto evolucionó hacia un sistema de gestión autónoma del riego. Integrando actuadores físicos (electroválvulas y caudalímetros) con los datos ambientales históricos y algoritmos predictivos, el sistema es capaz de tomar decisiones de riego automáticas basadas en las necesidades reales de las plantas. Todo el proceso de decisión se transparenta a los usuarios mediante una aplicación rediseñada, modular e intuitiva, cerrando el círculo entre tecnología, pedagogía y ecología.
+
+## Objetivos de Desarrollo Sostenible (ODS)
+
+Este proyecto contribuye directamente a la Agenda 2030, promoviendo:
+- **ODS 4 (Educación de Calidad)**: Aprendizaje activo e interdisciplinar en un entorno real.
+- **ODS 9 (Industria, Innovación e Infraestructura)**: Integración práctica de tecnologías IoT, LoRa y sistemas automatizados en contextos educativos.
+- **ODS 10 (Reducción de las Desigualdades)**: Tecnología adaptada y accesible que elimina barreras de participación.
+- **ODS 11 (Ciudades y Comunidades Sostenibles)**: Mejora en la gestión de espacios verdes comunitarios.
+- **ODS 15 (Vida de Ecosistemas Terrestres)**: Uso responsable del agua, preservación de especies y cuidado científico del entorno vegetal.
+

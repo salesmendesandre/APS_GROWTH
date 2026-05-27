@@ -3,7 +3,7 @@ title: |
   with Code and
   Artificial Intelligence
   Assistants
-author: Álvaro Lozano Murciego and André Sales Mendes
+author: Equipo APS-GROWTH
 copyright: "2026"
 logo: "_static/logo.png"
 language: en
@@ -15,7 +15,6 @@ parse:
     - colon_fence
     - dollarmath
     - linkify
-  use_download_button: true
   extra_navbar: |
     <div style="margin-top: 10px; font-size: 0.8em; color: #666;">
       Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -43,6 +42,7 @@ sphinx:
       selector_input: "pre"
       selector_output: ".output, .cell_output"
 html:
+  use_download_button: false
   extra_footer: |
     <p>Built with a modified version of <a href="https://teachbooks.io/">TeachBooks</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""></a></p>
 latex_docclass:

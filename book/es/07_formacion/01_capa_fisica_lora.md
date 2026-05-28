@@ -56,5 +56,6 @@ Al operar en la banda **ISM (Industrial, Scientific, and Medical) de 868 MHz** e
 
 Esto se controla mediante el **Duty Cycle** (Ciclo de Trabajo). En la subbanda más utilizada de 868 MHz, el Duty Cycle máximo permitido es del **1%**.
 
-> [!WARNING]
-> Un Duty Cycle del 1% significa que si tu nodo envía un mensaje que tarda 1 segundo en emitirse (Time on Air = 1s), el módulo de radio DEBE permanecer en silencio los siguientes 99 segundos. Si intentas emitir con mayor frecuencia, el firmware de LoRaWAN o las normativas legales bloquearán la transmisión.
+```{warning}
+Un Duty Cycle del 1% significa que si tu nodo envía un mensaje que tarda 1 segundo en emitirse (Time on Air = 1s), el módulo de radio DEBE permanecer en silencio los siguientes 99 segundos. Si intentas emitir con mayor frecuencia, el firmware de LoRaWAN o las normativas legales bloquearán la transmisión.
+```

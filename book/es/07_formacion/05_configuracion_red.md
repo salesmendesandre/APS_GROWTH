@@ -21,8 +21,11 @@ Para este taller utilizaremos **The Things Network (TTN)**, la mayor red públic
 4. Asigna un nombre identificativo y asegúrate de seleccionar el plan de frecuencias **Europe 863-870 MHz (SF9 for RX2)**.
 5. Haz clic en **Register gateway**.
 
-*(Pendiente: Insertar captura de pantalla de la interfaz "Register gateway" de TTN)*
 ![Captura: Añadir Gateway en TTN](_static/ttn_add_gateway.png)
+
+Una vez registrado, verás el panel general (*Overview*) del Gateway donde podrás comprobar su estado de conexión y la actividad reciente:
+
+![Captura: Resumen del Gateway en TTN](_static/ttn_gateway_overview.png)
 
 ### 2.2. Creación de la Aplicación
 

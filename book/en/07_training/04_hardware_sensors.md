@@ -29,6 +29,14 @@ To measure the amount of water available for the roots.
 ### 3. Ambient Temperature Sensors
 They allow recording the thermal fluctuations that affect the germination and growth of crops in the garden. The microcontroller will periodically request the value of this sensor before packing the frame.
 
+```{figure} ../../_static/generated/diagrams/es/lorawan_hardware.svg
+---
+width: 100%
+align: center
+---
+IoT node hardware block diagram.
+```
+
 ## Infrastructure and Energy Management
 
 ### Solar Panel and Battery

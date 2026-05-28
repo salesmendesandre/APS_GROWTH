@@ -1,0 +1,11 @@
+sequenceDiagram
+    participant Node
+    participant Gateway
+    participant NS as Network Server
+    participant AS as Application Server
+
+    Note over Node,NS: NwkSKey (MIC Authentication)
+    Note over Node,AS: AppSKey (AES-128 E2E Encryption)
+    Node->>Gateway: Encrypted Payload
+    Gateway->>NS: Encrypted Payload
+    NS->>AS: Encrypted Payload (Decrypted by AS)

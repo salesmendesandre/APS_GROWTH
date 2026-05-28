@@ -29,6 +29,14 @@ Para medir la cantidad de agua disponible para las raíces.
 ### 3. Sensores de Temperatura Ambiente
 Permiten registrar las fluctuaciones térmicas que afectan a la germinación y el crecimiento de los cultivos en el huerto. El microcontrolador solicitará periódicamente el valor de este sensor antes de empaquetar la trama.
 
+```{figure} ../../_static/generated/diagrams/es/lorawan_hardware.svg
+---
+width: 100%
+align: center
+---
+Diagrama de bloques del hardware del nodo IoT.
+```
+
 ## Infraestructura y Gestión Energética
 
 ### Panel Solar y Batería

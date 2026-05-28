@@ -11,12 +11,28 @@ Unlike mesh networks (like Zigbee), LoRaWAN uses a **star-of-stars** architectur
 3. **Network Server (NS)**: The brain of the network (e.g., The Things Network or ChirpStack). It filters duplicate packets, verifies authenticity, manages ADR (Adaptive Data Rate), and routes data.
 4. **Application Server (AS)**: The client's server that decrypts the data packet (*payload*) and stores or processes it.
 
+```{figure} ../../_static/generated/diagrams/es/lorawan_architecture.svg
+---
+width: 100%
+align: center
+---
+LoRaWAN Star-of-Stars Architecture.
+```
+
 ## Security and Cryptography
 
 Security is a native pillar of LoRaWAN. Every transmitted message is doubly protected using symmetric **AES-128** cryptography.
 
 1. **Network Session Key (NwkSKey)**: Used by the node and the *Network Server* to mathematically sign the message using a **MIC** (Message Integrity Code). This prevents tampering or spoofing.
 2. **Application Session Key (AppSKey)**: Used to **encrypt** the *payload* end-to-end. The Gateway and Network Server cannot read the content from the sensors; only the Application Server possesses the key to decrypt it.
+
+```{figure} ../../_static/generated/diagrams/es/lorawan_security.svg
+---
+width: 90%
+align: center
+---
+End-to-End encryption flow and integrity authentication (MIC).
+```
 
 ## Activation Procedures (Joining the Network)
 

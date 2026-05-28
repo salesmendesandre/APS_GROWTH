@@ -10,10 +10,8 @@ Existen dos tipos principales de chirps:
 - **Up-chirp:** La frecuencia aumenta progresivamente a lo largo del tiempo.
 - **Down-chirp:** La frecuencia disminuye progresivamente.
 
-```markdown
 ```{note}
 Esta técnica es extremadamente resiliente frente a interferencias de banda estrecha, ruido gaussiano blanco aditivo (AWGN) y el efecto Doppler, lo que permite demodular señales que se encuentran **por debajo del umbral de ruido** (hasta -20 dB de relación Señal a Ruido o SNR).
-```
 ```
 
 ## Parámetros RF Clave

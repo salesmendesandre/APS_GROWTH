@@ -38,4 +38,12 @@ For the project to have an impact on garden users and students, visualization is
 - **Database**: It is recommended to store the decoded data in a time-series database, such as **InfluxDB**.
 - **Dashboard**: Tools like **Grafana** allow connecting to InfluxDB to create interactive charts, alerts (e.g., "Warn if humidity drops below 20%"), and real-time gauges.
 
+```{figure} ../../_static/generated/diagrams/es/lorawan_data.svg
+---
+width: 100%
+align: center
+---
+Data extraction and integration architecture.
+```
+
 In this way, the data cycle is completed: from the magnetic field of the LoRa *chirp* emitted in the garden, to a control panel accessible from any web browser.

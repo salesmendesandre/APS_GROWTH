@@ -1,0 +1,12 @@
+sequenceDiagram
+    participant Node
+    participant NS as Network Server
+    
+    Note over Node, NS: AppEUI, DevEUI, AppKey (Pre-provisioned)
+    Node->>NS: Join Request (DevEUI, AppEUI, MIC)
+    Note over NS: Verifies MIC using AppKey
+    Note over NS: Generates DevAddr, NwkSKey, AppSKey
+    NS-->>Node: Join Accept (Encrypted with AppKey)
+    Note over Node: Derives NwkSKey, AppSKey, DevAddr
+    Note over Node, NS: Session established
+    Node->>NS: Data Uplink (Encrypted with AppSKey, signed with NwkSKey)

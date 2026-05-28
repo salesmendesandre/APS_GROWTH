@@ -1,0 +1,9 @@
+sequenceDiagram
+    participant Node
+    participant Gateway
+    Node->>Gateway: Uplink (TX)
+    Note over Node: Wait 1s (RECEIVE_DELAY1)
+    Gateway-->>Node: Downlink (RX1 Window)
+    Note over Node: Wait 2s (RECEIVE_DELAY2)
+    Gateway-->>Node: Downlink (RX2 Window)
+    Note over Node: Sleep (Deep Sleep)

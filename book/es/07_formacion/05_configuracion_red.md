@@ -23,4 +23,12 @@ Para añadir nuestro nodo ESP32 a la aplicación, debemos registrarlo utilizando
 2. **Application EUI / Join EUI (`AppEUI`)**: Un identificador de 64 bits que identifica a qué aplicación pertenece el dispositivo.
 3. **Application Key (`AppKey`)**: Una clave criptográfica AES-128 secreta. ¡Nunca debe transmitirse por la red! Se usa para negociar las claves de sesión de forma segura durante el *Join Request*.
 
+```{figure} ../../_static/generated/diagrams/es/lorawan_otaa.svg
+---
+width: 100%
+align: center
+---
+Secuencia de activación OTAA (Join Procedure).
+```
+
 Con el dispositivo registrado en la consola y las claves listas, el siguiente paso es inyectar estas claves en el firmware del ESP32.

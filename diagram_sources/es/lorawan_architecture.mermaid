@@ -1,0 +1,26 @@
+flowchart LR
+    subgraph "End Devices (Nodes)"
+        N1[Sensor Huerto 1]
+        N2[Sensor Huerto 2]
+        N3[Sensor Ambiental]
+    end
+
+    subgraph "Gateways (Packet Forwarders)"
+        GW1((Gateway 1))
+        GW2((Gateway 2))
+    end
+
+    subgraph "Network & Application"
+        NS{Network Server}
+        AS[Application Server]
+    end
+
+    N1 -. "LoRa RF" .-> GW1
+    N1 -. "LoRa RF" .-> GW2
+    N2 -. "LoRa RF" .-> GW1
+    N3 -. "LoRa RF" .-> GW2
+
+    GW1 == "IP (UDP/TCP)" ==> NS
+    GW2 == "IP (UDP/TCP)" ==> NS
+
+    NS == "MQTT / Webhook" ==> AS

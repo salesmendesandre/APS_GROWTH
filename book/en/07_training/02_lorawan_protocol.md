@@ -21,6 +21,14 @@ This is the default class and is **mandatory** for all LoRaWAN devices.
 3. If the server has something to send to it (Downlink), it will do so in one of those windows.
 4. If there is no response, the node goes to sleep until the next transmission.
 
+```{figure} ../../_static/generated/diagrams/es/lorawan_class_a.svg
+---
+width: 90%
+align: center
+---
+Reception windows (RX1 and RX2) after an Uplink in a Class A device.
+```
+
 > *Consumption: Extremely low (Ideal for our solar/battery node in the garden).*
 
 ### Class B (Synchronization with Beacons)

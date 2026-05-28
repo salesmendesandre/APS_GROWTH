@@ -38,4 +38,12 @@ Para que el proyecto tenga un impacto en los usuarios del huerto y los alumnos, 
 - **Base de Datos**: Se recomienda almacenar los datos decodificados en una base de datos de series temporales, como **InfluxDB**.
 - **Dashboard**: Herramientas como **Grafana** permiten conectarse a InfluxDB para crear gráficos interactivos, alertas (ej. "Avisar si la humedad baja del 20%") y medidores en tiempo real.
 
+```{figure} ../../_static/generated/diagrams/es/lorawan_data.svg
+---
+width: 100%
+align: center
+---
+Arquitectura de extracción e integración de datos.
+```
+
 De esta manera, el ciclo del dato se completa: desde el campo magnético del *chirp* LoRa emitido en el huerto, hasta un panel de control accesible desde cualquier navegador web.

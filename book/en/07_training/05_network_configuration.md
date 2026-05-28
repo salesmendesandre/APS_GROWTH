@@ -23,4 +23,12 @@ To add our ESP32 node to the application, we must register it using the **OTAA (
 2. **Application EUI / Join EUI (`AppEUI`)**: A 64-bit identifier that identifies which application the device belongs to.
 3. **Application Key (`AppKey`)**: A secret AES-128 cryptographic key. It must never be transmitted over the network! It is used to securely negotiate session keys during the *Join Request*.
 
+```{figure} ../../_static/generated/diagrams/es/lorawan_otaa.svg
+---
+width: 100%
+align: center
+---
+OTAA activation sequence (Join Procedure).
+```
+
 With the device registered in the console and the keys ready, the next step is to inject these keys into the ESP32 firmware.

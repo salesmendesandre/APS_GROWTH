@@ -30,5 +30,3 @@ El taller constó de los siguientes bloques temáticos, combinando teoría y muc
 2. **Componentes del nodo**: Identificación de los elementos clave de la arquitectura.
 3. **Montaje y sensores**: Ensamblaje físico del nodo y conexión de los sensores ambientales.
 4. **Envío de datos y monitorización**: Configuración de la red para su uso en un huerto educativo e inclusivo.
-
-Bajo el lema *"Tecnología, sostenibilidad e inclusión"*, el taller logró capacitar a los asistentes en tecnologías punteras aplicadas a entornos reales y sostenibles.

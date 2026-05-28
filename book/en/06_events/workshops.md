@@ -30,5 +30,3 @@ The workshop consisted of the following thematic blocks, combining theory with e
 2. **Node components**: Identification of the key elements of the architecture.
 3. **Assembly and sensors**: Physical assembly of the node and connection of the environmental sensors.
 4. **Data transmission and monitoring**: Configuring the network for use in an educational and inclusive garden.
-
-Under the motto *"Technology, sustainability, and inclusion"*, the workshop successfully trained attendees in cutting-edge technologies applied to real-world, sustainable environments.

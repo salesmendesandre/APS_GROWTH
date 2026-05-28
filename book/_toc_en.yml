@@ -7,6 +7,7 @@ parts:
     - file: en/02_aps_growth_ii
     - file: en/03_aps_growth_iii
     - file: en/04_funding
+    - file: en/05_publications
   - caption: Team
     chapters:
     - file: en/90_team

@@ -7,6 +7,7 @@ parts:
     - file: es/02_aps_growth_ii
     - file: es/03_aps_growth_iii
     - file: es/04_financiacion
+    - file: es/05_publicaciones
   - caption: Equipo
     chapters:
     - file: es/90_responsables

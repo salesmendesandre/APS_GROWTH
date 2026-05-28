@@ -23,7 +23,7 @@ This is the default class and is **mandatory** for all LoRaWAN devices.
 
 ```{figure} ../../_static/generated/diagrams/es/lorawan_class_a.svg
 ---
-width: 90%
+width: 65%
 align: center
 ---
 Reception windows (RX1 and RX2) after an Uplink in a Class A device.
@@ -36,7 +36,7 @@ It opens additional scheduled reception windows. To synchronize, gateways period
 
 ```{figure} ../../_static/generated/diagrams/es/lorawan_class_b.svg
 ---
-width: 90%
+width: 65%
 align: center
 ---
 Reception windows (Ping Slots) scheduled and synchronized by Beacons in a Class B device.
@@ -49,7 +49,7 @@ The device is always listening to the channel. The RX2 reception window remains 
 
 ```{figure} ../../_static/generated/diagrams/es/lorawan_class_c.svg
 ---
-width: 90%
+width: 65%
 align: center
 ---
 Continuous reception (RX2 always open) in a Class C device.

@@ -23,7 +23,7 @@ Es la clase por defecto y la **obligatoria** para todos los dispositivos LoRaWAN
 
 ```{figure} ../../_static/generated/diagrams/es/lorawan_class_a.svg
 ---
-width: 90%
+width: 65%
 align: center
 ---
 Ventanas de recepción (RX1 y RX2) tras un Uplink en un dispositivo de Clase A.
@@ -36,7 +36,7 @@ Abre ventanas de recepción adicionales programadas. Para sincronizarse, los gat
 
 ```{figure} ../../_static/generated/diagrams/es/lorawan_class_b.svg
 ---
-width: 90%
+width: 65%
 align: center
 ---
 Ventanas de recepción (Ping Slots) programadas y sincronizadas por Beacons en un dispositivo de Clase B.
@@ -49,7 +49,7 @@ El dispositivo está siempre escuchando el canal. La ventana de recepción RX2 p
 
 ```{figure} ../../_static/generated/diagrams/es/lorawan_class_c.svg
 ---
-width: 90%
+width: 65%
 align: center
 ---
 Recepción continua (RX2 siempre abierto) en un dispositivo de Clase C.

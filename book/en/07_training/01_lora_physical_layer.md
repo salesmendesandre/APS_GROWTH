@@ -1,6 +1,6 @@
 # Theory I: LoRa Physical Layer
 
-To develop efficient applications over LPWAN networks, it is essential to understand what happens at the electromagnetic and physical levels. **LoRa** (Long Range) is a proprietary modulation technology originally patented by Cycleo (now Semtech) that exclusively defines the **physical layer** of communication.
+In order to develop efficient applications over LPWAN networks, it is essential to understand what happens at the electromagnetic and physical level. **LoRa** (Long Range) is a modulation technology originally patented by Cycleo (now Semtech) that exclusively defines the **physical layer** of communication.
 
 ## Chirp Spread Spectrum (CSS) Modulation
 

@@ -1,25 +1,31 @@
 flowchart TD
-    subgraph "Power Management"
-        SP[Solar Panel 24V 6W] -->|DC-DC Step-down| CH[Charge Controller]
-        BATT[(LiPo Battery 7200mAh)] <--> CH
-        CH --> ESP
+    subgraph FuA["Fuentes de Energía"]
+        SP[Panel Solar 5V]
+        BATT[(Batería LiPo 3.7V 1000mAh)]
     end
 
-    subgraph "Heltec LoRa32 (ESP32)"
+    subgraph Heltec["Módulo Heltec WiFi LoRa 32"]
+        CH[Controlador de Carga]
         ESP[ESP32 SoC]
-        OLED[OLED Display]
-        LoRa[SX1276 LoRa Chip]
+        OLED[Pantalla OLED]
+        LoRa[Chip LoRa]
+        
+        CH -->|"Alimenta (3.3V)"| ESP
         ESP --- OLED
         ESP --- LoRa
     end
 
-    subgraph "Sensors"
-        L[BH1750 Light]
-        H[Capacitive Soil Moisture]
-        T[Temperature]
+    SP -->|"USB (5V)"| CH
+    BATT <-->|"Conector JST (3.7V)"| CH
+
+    subgraph Sens["Sensores Ambientales"]
+        L[Sensor de Luz BH1750]
+        H[Humedad del Suelo]
+        T[Temperatura DS18B20]
     end
 
-    L -- "I2C (SDA, SCL)" --> ESP
-    H -- "Analog (ADC)" --> ESP
+    L -- "I2C" --> ESP
+    H -- "Analógico (ADC)" --> ESP
     T -- "OneWire" --> ESP
-    LoRa -- "SPI" --> Ant((Antenna))
+    
+    LoRa -- "Cable U.FL" --> Ant((Antena Externa LoRa))

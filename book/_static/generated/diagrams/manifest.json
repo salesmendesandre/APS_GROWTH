@@ -122,6 +122,12 @@
       "format": "svg"
     },
     {
+      "source": "diagram_sources/en/lora_vs_others.mermaid",
+      "output": "book/_static/generated/diagrams/en/lora_vs_others.svg",
+      "type": "mermaid",
+      "format": "svg"
+    },
+    {
       "source": "diagram_sources/es/01_tutorial_02_flujo_trabajo_01.mermaid",
       "output": "book/_static/generated/diagrams/es/01_tutorial_02_flujo_trabajo_01.svg",
       "type": "mermaid",
@@ -238,6 +244,12 @@
     {
       "source": "diagram_sources/es/05_contenidos_basicos_mermaid_05.mermaid",
       "output": "book/_static/generated/diagrams/es/05_contenidos_basicos_mermaid_05.svg",
+      "type": "mermaid",
+      "format": "svg"
+    },
+    {
+      "source": "diagram_sources/es/lora_vs_others.mermaid",
+      "output": "book/_static/generated/diagrams/es/lora_vs_others.svg",
       "type": "mermaid",
       "format": "svg"
     },

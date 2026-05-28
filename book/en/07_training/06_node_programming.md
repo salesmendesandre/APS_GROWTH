@@ -1,12 +1,59 @@
 # IoT Node Programming
 
-Firmware development for the ESP32 will preferably be done in **PlatformIO** or the **Arduino IDE**, using C/C++. The goal is to read the sensors, pack the data ultra-efficiently, and send it via LoRaWAN, minimizing the time the microcontroller spends powered on.
+Firmware development for the ESP32 will preferably be done in **PlatformIO** or the **Arduino IDE**, using C/C++. The final goal is to read the sensors, pack the data ultra-efficiently, and send it via LoRaWAN, minimizing the time the microcontroller spends powered on.
 
-## 1. Required Libraries
-- **MCCI LoRaWAN LMIC library**: The standard implementation of the LoRaWAN stack for microcontrollers. It handles MAC logic, RX1/RX2 timings, and Duty Cycle.
-- **Wire.h** and specific libraries (such as `BH1750.h` or those for temperature/humidity sensors).
+## 0. Environment Pre-configuration (Arduino IDE)
 
-## 2. Sensor Reading and Payload Optimization (Packing)
+Before writing any code, we must prepare our development environment so that it recognizes the **Heltec LoRa32 V3** board and has the necessary libraries:
+
+1. **ESP32 Board Manager**: In the Arduino IDE preferences, add the Espressif board manager URL (`https://espressif.github.io/arduino-esp32/package_esp32_index.json`). Then, go to the "Boards Manager" and install the **esp32** platform.
+2. **Board Selection**: Select the **Heltec WiFi LoRa 32(V3) / Wireless shell(V3)** board from the `Tools > Board` menu.
+3. **Library Installation**: Go to `Sketch > Include Library > Manage Libraries` and install the following base dependencies:
+   - `MCCI LoRaWAN LMIC library` by IBM/MCCI (for the LoRaWAN stack).
+   - `BH1750` by Christopher Laws (for the light sensor).
+   - `OneWire` and `DallasTemperature` (for the humidity/temperature sensor).
+
+*Note: If you prefer to use **PlatformIO** (VS Code), you can add these libraries directly under `lib_deps` in your `platformio.ini` file.*
+
+## 1. Initial Sensor Tests (Local Reading)
+
+Before integrating radio frequency communication (LoRaWAN), it is essential to test in isolation that the microcontroller can communicate with each sensor and obtain valid readings via the Serial Monitor.
+
+For example, to check the I2C bus and the **BH1750** light sensor, we will create a basic script (without LoRa):
+
+```cpp
+#include <Wire.h>
+#include <BH1750.h>
+
+BH1750 luxSensor;
+
+void setup() {
+  Serial.begin(115200);
+  Wire.begin(); // Initializes the I2C bus (default SDA and SCL pins)
+  
+  if (luxSensor.begin()) {
+    Serial.println("BH1750 sensor started successfully.");
+  } else {
+    Serial.println("Error: BH1750 not detected.");
+  }
+}
+
+void loop() {
+  uint16_t lux = luxSensor.readLightLevel();
+  Serial.print("Ambient light: ");
+  Serial.print(lux);
+  Serial.println(" lux");
+  delay(2000);
+}
+```
+
+*This preliminary local validation step (correct hardware and wiring) will save you hours of debugging later on.*
+
+## 2. Library Inclusion and MAC Logic
+- **MCCI LoRaWAN LMIC library**: This is the standard implementation of the LoRaWAN stack for microcontrollers. Besides radio transmissions, it handles MAC layer logic, reception window timings (RX1/RX2), and strict compliance with the Duty Cycle (allowed time on air).
+- **Wire.h**: Native library to control the I2C bus for the sensors.
+
+## 3. Payload Optimization (Packing)
 
 In LoRaWAN, every extra byte sent drastically reduces battery life and increases the chances of collision. **You should never send JSON strings or clear text**. Everything must be packed in binary.
 
@@ -26,7 +73,7 @@ payload[2] = light >> 8;
 payload[3] = light & 0xFF;
 ```
 
-## 3. Event-Driven Logic and LMIC
+## 4. Event-Driven Logic and LMIC
 
 The LMIC library works via callbacks (events). The main flow of our program will be:
 1. `setup()`: Initializes the LoRa chip, I2C/ADC sensors, and sets the OTAA keys (`DevEUI`, `AppEUI`, `AppKey`).
@@ -34,7 +81,7 @@ The LMIC library works via callbacks (events). The main flow of our program will
 3. `EV_JOINED` event: The node has successfully joined. Periodic transmissions are enabled.
 4. `EV_TXCOMPLETE` event: The packet has been transmitted and the reception windows are closed. **This is the exact moment to go to sleep.**
 
-## 4. Extreme Power Management (Deep Sleep)
+## 5. Extreme Power Management (Deep Sleep)
 
 Instead of using the `delay()` function (which keeps the CPU consuming between 40 and 80 mA), we will use the ESP32's **Deep Sleep**.
 In Deep Sleep, the RAM and CPU are turned off, reducing consumption to < 10 µA. Only the RTC (Real Time Clock) coprocessor stays on to wake up the chip after the stipulated time (e.g., 30 minutes).

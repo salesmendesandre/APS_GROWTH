@@ -1,8 +1,25 @@
 # Formación: Taller LoRaWAN Ambiental
 
-El proyecto **APS-GROWTH II** no solo trata de desplegar tecnología en huertos educativos, sino de formar a los futuros ingenieros en las tecnologías subyacentes que hacen posible el Internet de las Cosas (IoT) a gran escala.
+El proyecto **APS-GROWTH II** va más allá del simple despliegue de dispositivos en huertos educativos; su misión central es capacitar a los futuros ingenieros en el diseño y dominio de las arquitecturas que hacen posible el Internet de las Cosas (IoT) en entornos reales.
 
 Este bloque de formación está diseñado para **estudiantes de Ingeniería Informática** y proporciona una inmersión profunda en las tecnologías **LPWAN** (Low Power Wide Area Network), centrándose específicamente en **LoRa** y el protocolo **LoRaWAN**.
+
+## El Ecosistema LPWAN: ¿LoRa o LoRaWAN?
+
+A menudo estos dos términos se confunden o se usan indistintamente, pero representan capas completamente diferentes dentro de las telecomunicaciones:
+
+- **LoRa** (*Long Range*): Es puramente la **capa física** de transmisión. Es la técnica de modulación de radiofrecuencia (el "cómo" viajan las ondas por el aire).
+- **LoRaWAN**: Es el **protocolo de red y arquitectura** del sistema (la capa MAC o Media Access Control). Define cómo se comunican los dispositivos, cómo se gestionan las conexiones, el encriptado de los datos y el ruteo a través de los Gateways hasta el servidor.
+
+Ambas tecnologías se ubican en el extremo del ecosistema IoT diseñado para maximizar el alcance y minimizar el consumo energético, a costa de sacrificar ancho de banda (velocidad de datos), tal y como se muestra en la siguiente comparativa frente a Wi-Fi o 5G:
+
+```{figure} ../../_static/generated/diagrams/es/lora_vs_others.svg
+---
+width: 80%
+align: center
+---
+Ubicación de LoRaWAN en el espectro de tecnologías IoT (Alto Alcance y Bajo Consumo).
+```
 
 ## Objetivos del Taller
 

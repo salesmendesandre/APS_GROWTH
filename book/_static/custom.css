@@ -15,12 +15,21 @@ html[data-theme="dark"] {
     --pst-color-primary: #51ad39 !important; 
     --pst-color-secondary: #408d2b !important;
     --pst-color-link: #51ad39 !important;
-    --pst-color-info: #51ad39 !important;
-}
-
-/* Make titles green */
-h1, h2, h3, h4, h5, h6 {
+/* Make titles green, use a cascading darker tone for subpoints */
+h1 {
     color: var(--pst-color-primary) !important;
+}
+h2 {
+    color: var(--pst-color-secondary) !important;
+}
+h3 {
+    color: #306e20 !important;
+}
+h4 {
+    color: #225016 !important;
+}
+h5, h6 {
+    color: #15330c !important;
 }
 
 /* Ensure homogeneous article width */

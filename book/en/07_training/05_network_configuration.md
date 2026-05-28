@@ -9,11 +9,48 @@ The Gateway is the bridge between the electromagnetic spectrum (LoRa) and the IP
 - **Packet Forwarder**: The Gateway's internal software (usually based on the *Semtech UDP Packet Forwarder* or *Basic Station*) must be configured to point to the IP address or domain of our Network Server. The port must be specified (e.g., 1700 for UDP) as well as the Gateway's EUI to identify it on the server.
 - **Frequencies**: Ensure that the Gateway is configured to listen on the correct frequency plan (EU868 for Europe).
 
-## 2. Registration on the Network Server
+## 2. Using The Things Network (TTN)
 
-Once the Gateway is routing packets, we must configure the server side:
-1. **Gateway Registration**: We register the Gateway in the Network Server console using its EUI. If everything is correct, we will see the status as "Connected".
-2. **Application Creation**: We create a logical "Application". This application will group all the environmental nodes that we deploy in the garden.
+For this workshop, we will use **The Things Network (TTN)**, the largest public and collaborative LoRaWAN network globally, maintained by The Things Industries (TTI). Below are the steps to configure our infrastructure in their Console.
+
+### 2.1. Registering the Gateway
+
+1. Log in to the [TTN Console (Europe 1)](https://eu1.cloud.thethings.network/console/).
+2. Go to **Gateways** and click on **Register gateway**.
+3. Enter the **Gateway EUI** (a unique 8-byte code usually found on the Heltec sticker or read via the serial port).
+4. Assign an identifying name and ensure you select the **Europe 863-870 MHz (SF9 for RX2)** frequency plan.
+5. Click **Register gateway**.
+
+*(Pending: Insert screenshot of the TTN "Register gateway" interface)*
+![Screenshot: Add Gateway in TTN](_static/ttn_add_gateway.png)
+
+### 2.2. Creating the Application
+
+In TTN, nodes are not added individually; they must belong to an **Application** that groups their data.
+
+1. Go to the top menu **Applications** and click **Create application**.
+2. Fill in the **Application ID** (it must be unique, without spaces or capital letters, e.g., `aps-growth-garden-01`).
+3. Click **Create application**.
+
+*(Pending: Insert screenshot of "Create application")*
+![Screenshot: Create Application in TTN](_static/ttn_create_app.png)
+
+### 2.3. Registering the Node (End Device)
+
+Inside the newly created application, we proceed to register the ESP32 microcontroller:
+
+1. Click on **Register end device**.
+2. Under *Input Method*, select **Enter end device specifics manually** (since our node is "homemade" and not in the commercial manufacturer database).
+3. Select:
+   - **Frequency plan**: Europe 863-870 MHz (SF9 for RX2).
+   - **LoRaWAN version**: LoRaWAN Specification 1.0.3 (the one supported by the LMIC library).
+4. The provisioning method will be **Over the air activation (OTAA)**.
+5. Click **Generate** in the **JoinEUI** and **DevEUI** sections if you don't have pre-assigned ones.
+6. Click **Generate** to create the secret **AppKey**.
+7. Click **Register end device**.
+
+*(Pending: Insert screenshot of "Register end device" and keys generation)*
+![Screenshot: Register Node in TTN](_static/ttn_add_node.png)
 
 ## 3. Device Registration (OTAA)
 

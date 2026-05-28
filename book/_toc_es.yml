@@ -13,6 +13,18 @@ parts:
     - file: es/06_eventos/intro
       sections:
       - file: es/06_eventos/talleres
+  - caption: Formación
+    chapters:
+    - file: es/07_formacion/intro
+      sections:
+      - file: es/07_formacion/01_capa_fisica_lora
+      - file: es/07_formacion/02_protocolo_lorawan
+      - file: es/07_formacion/03_arquitectura_seguridad
+      - file: es/07_formacion/04_hardware_sensores
+      - file: es/07_formacion/05_configuracion_red
+      - file: es/07_formacion/06_programacion_nodo
+      - file: es/07_formacion/07_ensamblaje_despliegue
+      - file: es/07_formacion/08_analisis_datos
   - caption: Equipo
     chapters:
     - file: es/90_responsables

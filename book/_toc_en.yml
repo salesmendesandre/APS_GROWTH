@@ -13,6 +13,18 @@ parts:
     - file: en/06_events/intro
       sections:
       - file: en/06_events/workshops
+  - caption: Training
+    chapters:
+    - file: en/07_training/intro
+      sections:
+      - file: en/07_training/01_lora_physical_layer
+      - file: en/07_training/02_lorawan_protocol
+      - file: en/07_training/03_architecture_security
+      - file: en/07_training/04_hardware_sensors
+      - file: en/07_training/05_network_configuration
+      - file: en/07_training/06_node_programming
+      - file: en/07_training/07_assembly_deployment
+      - file: en/07_training/08_data_analysis
   - caption: Team
     chapters:
     - file: en/90_team

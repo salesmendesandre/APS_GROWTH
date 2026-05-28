@@ -8,6 +8,11 @@ parts:
     - file: en/03_aps_growth_iii
     - file: en/04_funding
     - file: en/05_publications
+  - caption: Events
+    chapters:
+    - file: en/06_events/intro
+      sections:
+      - file: en/06_events/workshops
   - caption: Team
     chapters:
     - file: en/90_team

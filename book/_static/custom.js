@@ -149,6 +149,63 @@ document.addEventListener("DOMContentLoaded", function () {
         // Insert at the beginning of header buttons (before language switcher)
         header.prepend(btn);
     })();
+
+    // Image Zoom Modal (Lightbox)
+    (function() {
+        const images = document.querySelectorAll('.bd-article img:not(.logo)');
+        
+        function openModal(src) {
+            const modal = document.createElement('div');
+            modal.className = 'teachbook-image-modal';
+            
+            const modalImg = document.createElement('img');
+            modalImg.src = src;
+            
+            const closeBtn = document.createElement('span');
+            closeBtn.innerHTML = '&times;';
+            closeBtn.className = 'teachbook-modal-close';
+            
+            modal.appendChild(modalImg);
+            modal.appendChild(closeBtn);
+            document.body.appendChild(modal);
+            
+            modal.addEventListener('click', function() {
+                modal.classList.remove('active');
+                setTimeout(() => {
+                    if(document.body.contains(modal)) document.body.removeChild(modal);
+                }, 200);
+            });
+            
+            requestAnimationFrame(() => modal.classList.add('active'));
+        }
+
+        images.forEach(img => {
+            const parentA = img.closest('a');
+            
+            if (parentA) {
+                // Only hijack if it's an image link (href ends with an image extension or has image-reference class)
+                const href = parentA.getAttribute('href') || '';
+                if (!parentA.classList.contains('image-reference') && 
+                    !href.match(/\.(png|jpeg|jpg|svg|gif)$/i)) {
+                    return; // Normal link, leave it alone
+                }
+                
+                parentA.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openModal(img.src);
+                });
+            } else {
+                img.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openModal(img.src);
+                });
+            }
+            
+            img.style.cursor = 'zoom-in';
+            img.title = 'Haz clic para ampliar / Click to zoom';
+        });
+    })();
+
 });
 
 function fixSearchPageLinks(rootPrefix, languages) {

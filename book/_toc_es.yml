@@ -20,11 +20,12 @@ parts:
       - file: es/07_formacion/01_capa_fisica_lora
       - file: es/07_formacion/02_protocolo_lorawan
       - file: es/07_formacion/03_arquitectura_seguridad
-      - file: es/07_formacion/04_hardware_sensores
-      - file: es/07_formacion/05_configuracion_red
-      - file: es/07_formacion/06_programacion_nodo
-      - file: es/07_formacion/07_ensamblaje_despliegue
-      - file: es/07_formacion/08_analisis_datos
+      - file: es/07_formacion/04_network_servers
+      - file: es/07_formacion/05_hardware_sensores
+      - file: es/07_formacion/06_configuracion_red
+      - file: es/07_formacion/07_programacion_nodo
+      - file: es/07_formacion/08_ensamblaje_despliegue
+      - file: es/07_formacion/09_analisis_datos
   - caption: Equipo
     chapters:
     - file: es/90_responsables

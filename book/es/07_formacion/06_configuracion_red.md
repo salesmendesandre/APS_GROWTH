@@ -21,11 +21,25 @@ Para este taller utilizaremos **The Things Network (TTN)**, la mayor red públic
 4. Asigna un nombre identificativo y asegúrate de seleccionar el plan de frecuencias **Europe 863-870 MHz (SF9 for RX2)**.
 5. Haz clic en **Register gateway**.
 
-![Captura: Añadir Gateway en TTN](_static/ttn_add_gateway.png)
+```{figure} ../../_static/ttn_add_gateway.png
+---
+width: 100%
+align: center
+name: fig-ttn-add-gateway
+---
+Interfaz de The Things Network para registrar un nuevo Gateway.
+```
 
 Una vez registrado, verás el panel general (*Overview*) del Gateway donde podrás comprobar su estado de conexión y la actividad reciente:
 
-![Captura: Resumen del Gateway en TTN](_static/ttn_gateway_overview.png)
+```{figure} ../../_static/ttn_gateway_overview.png
+---
+width: 100%
+align: center
+name: fig-ttn-gateway-overview
+---
+Panel general de estado y estadísticas del Gateway en TTN.
+```
 
 ### 2.2. Creación de la Aplicación
 
@@ -35,8 +49,25 @@ En TTN, los nodos no se añaden sueltos, sino que deben pertenecer a una **Aplic
 2. Rellena el **Application ID** (debe ser único, sin espacios ni mayúsculas, ej. `aps-growth-huerto-01`).
 3. Haz clic en **Create application**.
 
-*(Pendiente: Insertar captura de pantalla de "Create application")*
-![Captura: Crear Aplicación en TTN](_static/ttn_create_app.png)
+```{figure} ../../_static/ttn_create_app.png
+---
+width: 100%
+align: center
+name: fig-ttn-create-app
+---
+Creación de una aplicación lógica en TTN para agrupar los nodos del huerto.
+```
+
+Una vez creada, accederás al panel general de la aplicación, desde donde podrás gestionar todos los dispositivos vinculados a ella:
+
+```{figure} ../../_static/ttn_app_overview.png
+---
+width: 100%
+align: center
+name: fig-ttn-app-overview
+---
+Panel general de la aplicación recién creada en The Things Network.
+```
 
 ### 2.3. Dar de Alta el Nodo (End Device)
 
@@ -52,38 +83,24 @@ Dentro de la aplicación recién creada, procedemos a registrar el microcontrola
 6. Haz clic en **Generate** para crear la **AppKey** secreta.
 7. Haz clic en **Register end device**.
 
-*(Pendiente: Insertar captura de pantalla de "Register end device" y generación de claves)*
-![Captura: Registrar Nodo en TTN](_static/ttn_add_node.png)
-
-## 3. Registro de Dispositivos (OTAA)
-
-Para añadir nuestro nodo ESP32 a la aplicación, debemos registrarlo utilizando el método **OTAA (Over-The-Air Activation)**. El Network Server generará o nos pedirá tres claves fundamentales que deberemos copiar en el código de nuestro nodo:
-
-1. **Device EUI (`DevEUI`)**: Un identificador único global de 64 bits para nuestro ESP32 (similar a una dirección MAC). A veces lo genera el propio chip, a veces lo asignamos manualmente.
-2. **Application EUI / Join EUI (`AppEUI`)**: Un identificador de 64 bits que identifica a qué aplicación pertenece el dispositivo.
-3. **Application Key (`AppKey`)**: Una clave criptográfica AES-128 secreta. ¡Nunca debe transmitirse por la red! Se usa para negociar las claves de sesión de forma segura durante el *Join Request*.
-
-```{figure} ../../_static/generated/diagrams/es/lorawan_otaa.svg
+```{figure} ../../_static/ttn_add_node.png
 ---
 width: 100%
 align: center
+name: fig-ttn-add-node
 ---
-Secuencia de activación OTAA (Join Procedure).
+Generación de claves OTAA (DevEUI, AppEUI, AppKey) al registrar el nodo.
 ```
 
-Con el dispositivo registrado en la consola y las claves listas, el siguiente paso es inyectar estas claves en el firmware del ESP32.
+Una vez finalizado el registro, accederás al panel de control del dispositivo (*Device overview*), donde podrás verificar su estado, los mensajes enviados (*Payload*) y otra información de diagnóstico:
 
-## 4. Activación por Personalización (ABP)
-
-Existe un segundo método de registro en la red llamado **ABP (Activation By Personalization)**. A diferencia de OTAA, donde las claves de sesión se negocian dinámicamente, en ABP **grabamos directamente en el código del microcontrolador** la dirección del dispositivo (`DevAddr`) y las claves de sesión definitivas (`NwkSKey` y `AppSKey`).
-
-```{figure} ../../_static/generated/diagrams/es/lorawan_abp.svg
+```{figure} ../../_static/ttn_node_overview.png
 ---
 width: 100%
 align: center
+name: fig-ttn-node-overview
 ---
-Secuencia de envío de datos mediante ABP (sin Join Procedure).
+Panel general de estado y actividad del nodo recién registrado en TTN.
 ```
 
-- **Ventajas**: El dispositivo no necesita hacer el *Join Procedure*, lo que ahorra batería al encenderse y evita que falle si la cobertura es marginal (ya que OTAA requiere una respuesta bidireccional del Gateway).
-- **Desventajas**: Es mucho menos seguro, ya que las claves de cifrado nunca rotan. Además, si cambiamos de Network Server (ej. de TTN a ChirpStack), tendremos que reprogramar todos los nodos a mano, mientras que con OTAA solo se debe renegociar el Join. Por ello, **OTAA es el método estándar y recomendado para entornos reales**.
+Con el dispositivo registrado en la consola y las claves listas, el siguiente paso será inyectar estas claves OTAA en el firmware del ESP32 durante la fase de programación.

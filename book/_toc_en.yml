@@ -20,11 +20,12 @@ parts:
       - file: en/07_training/01_lora_physical_layer
       - file: en/07_training/02_lorawan_protocol
       - file: en/07_training/03_architecture_security
-      - file: en/07_training/04_hardware_sensors
-      - file: en/07_training/05_network_configuration
-      - file: en/07_training/06_node_programming
-      - file: en/07_training/07_assembly_deployment
-      - file: en/07_training/08_data_analysis
+      - file: en/07_training/04_network_servers
+      - file: en/07_training/05_hardware_sensors
+      - file: en/07_training/06_network_configuration
+      - file: en/07_training/07_node_programming
+      - file: en/07_training/08_assembly_deployment
+      - file: en/07_training/09_data_analysis
   - caption: Team
     chapters:
     - file: en/90_team

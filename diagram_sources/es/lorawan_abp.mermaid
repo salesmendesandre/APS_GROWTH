@@ -3,6 +3,6 @@ sequenceDiagram
     participant NS as Network Server
 
     Note over Node, NS: DevAddr, NwkSKey, AppSKey (Hardcoded / Pre-provisioned)
-    Note over Node: Session already established (No Join Procedure)
+    Note over Node, NS: Session already established (No Join Procedure)
     Node->>NS: Data Uplink (Encrypted with AppSKey, signed with NwkSKey)
     NS-->>Node: Data Downlink (Optional)

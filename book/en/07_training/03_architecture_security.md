@@ -38,13 +38,44 @@ End-to-End encryption flow and integrity authentication (MIC).
 
 For the environmental node to obtain these session keys and associate with the network, there are two methods:
 
-### ABP (Activation by Personalization)
-Session keys (`NwkSKey`, `AppSKey`) and the device address (`DevAddr`) are statically programmed into the node's firmware (C++ code) at the factory.
-- *Advantage*: The node does not need to negotiate its connection; it can transmit immediately.
-- *Disadvantage*: It is less secure. If frame counter synchronization is lost, the network will drop packets to prevent *Replay attacks*.
-
 ### OTAA (Over-The-Air Activation)
-The recommended method and the one we will implement in the workshop. The node initiates a dynamic negotiation (*Join Request*) by sending its static global credentials (`DevEUI`, `AppEUI`, and `AppKey`).
-The server verifies the identity, randomly generates a temporary identifier (`DevAddr`), and negotiates the session keys (`NwkSKey` and `AppSKey`) by sending them encrypted in a *Join Accept*.
+The recommended method and the one we will implement in the workshop. The node initiates a dynamic negotiation (*Join Request*) by sending its static global credentials:
+
+1. **Device EUI (`DevEUI`)**: A 64-bit globally unique identifier (similar to a MAC address).
+2. **Application EUI / Join EUI (`AppEUI`)**: Identifies which application the device belongs to.
+3. **Application Key (`AppKey`)**: A secret cryptographic key. It must never be transmitted over the network! It is used to securely negotiate session keys during the *Join Request*.
+
+The server verifies the identity, randomly generates a temporary identifier (`DevAddr`), and negotiates the session keys (`NwkSKey` y `AppSKey`) by sending them encrypted in a *Join Accept*.
+
+```{figure} ../../_static/generated/diagrams/es/lorawan_otaa.svg
+---
+width: 100%
+align: center
+---
+OTAA activation sequence (Join Procedure).
+```
+
+### ABP (Activation by Personalization)
+Unlike OTAA, where session keys are negotiated dynamically, in ABP we **hardcode directly into the microcontroller's code** the device address (`DevAddr`) and the final session keys (`NwkSKey` and `AppSKey`).
+
+```{figure} ../../_static/generated/diagrams/es/lorawan_abp.svg
+---
+width: 100%
+align: center
+---
+Data transmission sequence using ABP (no Join Procedure).
+```
+
+### OTAA vs ABP Comparison
+
+As a summary, these are the main differences between both activation methods:
+
+| Feature | OTAA (Recommended) | ABP |
+|---|---|---|
+| **Key Negotiation** | Dynamic (*Join Request/Accept*) | Static (Hardcoded in firmware) |
+| **Security** | High (rotating session keys) | Low (fixed keys, risk of *replay attack*) |
+| **Initial Power Consumption** | Higher (requires bidirectional confirmation on startup) | Lower (can transmit immediately) |
+| **Network Flexibility** | High (easy migration to another *Network Server*) | Low (requires reprogramming all nodes) |
+| **Fault Tolerance** | *Join* may fail if coverage is marginal | No *Join*, but packets are dropped if desynchronized |
 
 *In the assembly workshop, we will configure the OTAA credentials in PlatformIO to securely join our node to the Network Server.*

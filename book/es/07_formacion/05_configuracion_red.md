@@ -32,3 +32,18 @@ Secuencia de activación OTAA (Join Procedure).
 ```
 
 Con el dispositivo registrado en la consola y las claves listas, el siguiente paso es inyectar estas claves en el firmware del ESP32.
+
+## 4. Activación por Personalización (ABP)
+
+Existe un segundo método de registro en la red llamado **ABP (Activation By Personalization)**. A diferencia de OTAA, donde las claves de sesión se negocian dinámicamente, en ABP **grabamos directamente en el código del microcontrolador** la dirección del dispositivo (`DevAddr`) y las claves de sesión definitivas (`NwkSKey` y `AppSKey`).
+
+```{figure} ../../_static/generated/diagrams/es/lorawan_abp.svg
+---
+width: 100%
+align: center
+---
+Secuencia de envío de datos mediante ABP (sin Join Procedure).
+```
+
+- **Ventajas**: El dispositivo no necesita hacer el *Join Procedure*, lo que ahorra batería al encenderse y evita que falle si la cobertura es marginal (ya que OTAA requiere una respuesta bidireccional del Gateway).
+- **Desventajas**: Es mucho menos seguro, ya que las claves de cifrado nunca rotan. Además, si cambiamos de Network Server (ej. de TTN a ChirpStack), tendremos que reprogramar todos los nodos a mano, mientras que con OTAA solo se debe renegociar el Join. Por ello, **OTAA es el método estándar y recomendado para entornos reales**.

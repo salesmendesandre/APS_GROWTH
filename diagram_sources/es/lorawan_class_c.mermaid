@@ -1,0 +1,10 @@
+sequenceDiagram
+    participant Node
+    participant Gateway
+
+    Node->>Gateway: Uplink (TX)
+    Note over Node: RX1 Window (Short Delay)
+    Gateway-->>Node: Downlink (if needed)
+    Note over Node: RX2 Window (Always Open)
+    Gateway-->>Node: Downlink (at any time)
+    Note over Node: RX2 Window remains Open

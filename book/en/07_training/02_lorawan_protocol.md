@@ -32,14 +32,30 @@ Reception windows (RX1 and RX2) after an Uplink in a Class A device.
 > *Consumption: Extremely low (Ideal for our solar/battery node in the garden).*
 
 ### Class B (Synchronization with Beacons)
-Opens additional scheduled reception windows. To synchronize, gateways periodically emit beacons.
+It opens additional scheduled reception windows. To synchronize, gateways periodically emit beacons. This allows the server to know exactly when (*Ping Slot*) the device will be awake to receive a *Downlink* message, saving battery the rest of the time.
 
-> *Consumption: Medium. Useful for devices that need to act on demand with a certain latency.*
+```{figure} ../../_static/generated/diagrams/es/lorawan_class_b.svg
+---
+width: 90%
+align: center
+---
+Reception windows (Ping Slots) scheduled and synchronized by Beacons in a Class B device.
+```
 
-### Class C (Continuous reception)
-The device is always listening to the channel (reception windows are always open except when transmitting).
+> *Consumption: Medium. Useful for devices that need to act on demand with some latency (e.g., a battery-operated irrigation valve).*
 
-> *Consumption: High. Not suitable for batteries, requires connection to the power grid (e.g., industrial actuators).*
+### Class C (Continuous Reception)
+The device is always listening to the channel. The RX2 reception window remains continuously open except when the device is transmitting (TX). Latency is near zero because the server can send commands at any time without waiting for an *Uplink*.
+
+```{figure} ../../_static/generated/diagrams/es/lorawan_class_c.svg
+---
+width: 90%
+align: center
+---
+Continuous reception (RX2 always open) in a Class C device.
+```
+
+> *Consumption: High. Not suitable for batteries, requires connection to the electrical grid (e.g., smart streetlights or industrial actuators).*
 
 ## Adaptive Data Rate (ADR)
 

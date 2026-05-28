@@ -32,14 +32,30 @@ Ventanas de recepción (RX1 y RX2) tras un Uplink en un dispositivo de Clase A.
 > *Consumo: Extremadamente bajo (Ideal para nuestro nodo solar/batería en el huerto).*
 
 ### Clase B (Sincronización con Beacons)
-Abre ventanas de recepción adicionales programadas. Para sincronizarse, los gateways emiten periódicamente balizas (*beacons*).
+Abre ventanas de recepción adicionales programadas. Para sincronizarse, los gateways emiten periódicamente balizas (*beacons*). Esto permite que el servidor sepa exactamente en qué momento (*Ping Slot*) el dispositivo estará despierto para recibir un mensaje *Downlink*, ahorrando batería el resto del tiempo.
 
-> *Consumo: Medio. Útil para dispositivos que necesitan actuar bajo demanda con cierta latencia.*
+```{figure} ../../_static/generated/diagrams/es/lorawan_class_b.svg
+---
+width: 90%
+align: center
+---
+Ventanas de recepción (Ping Slots) programadas y sincronizadas por Beacons en un dispositivo de Clase B.
+```
+
+> *Consumo: Medio. Útil para dispositivos que necesitan actuar bajo demanda con cierta latencia (ej. una válvula de riego a batería).*
 
 ### Clase C (Recepción continua)
-El dispositivo está siempre escuchando el canal (las ventanas de recepción están siempre abiertas salvo cuando transmite).
+El dispositivo está siempre escuchando el canal. La ventana de recepción RX2 permanece abierta continuamente salvo cuando el dispositivo está transmitiendo (TX). La latencia es casi nula porque el servidor puede enviarle comandos en cualquier momento sin esperar a un *Uplink*.
 
-> *Consumo: Alto. No apto para baterías, requiere conexión a la red eléctrica (ej. actuadores industriales).*
+```{figure} ../../_static/generated/diagrams/es/lorawan_class_c.svg
+---
+width: 90%
+align: center
+---
+Recepción continua (RX2 siempre abierto) en un dispositivo de Clase C.
+```
+
+> *Consumo: Alto. No apto para baterías, requiere conexión a la red eléctrica (ej. farolas inteligentes o actuadores industriales).*
 
 ## Adaptive Data Rate (ADR)
 

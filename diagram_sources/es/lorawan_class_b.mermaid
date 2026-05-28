@@ -1,0 +1,11 @@
+sequenceDiagram
+    participant Gateway
+    participant Node
+
+    Gateway-->>Node: Beacon (Time Synchronization)
+    Note over Node: Sleep
+    Gateway-->>Node: Ping Slot (Downlink Window)
+    Note over Node: Sleep
+    Gateway-->>Node: Ping Slot (Downlink Window)
+    Note over Node: Sleep
+    Gateway-->>Node: Beacon

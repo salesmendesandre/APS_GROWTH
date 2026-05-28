@@ -242,6 +242,12 @@
       "format": "svg"
     },
     {
+      "source": "diagram_sources/es/lorawan_abp.mermaid",
+      "output": "book/_static/generated/diagrams/es/lorawan_abp.svg",
+      "type": "mermaid",
+      "format": "svg"
+    },
+    {
       "source": "diagram_sources/es/lorawan_architecture.mermaid",
       "output": "book/_static/generated/diagrams/es/lorawan_architecture.svg",
       "type": "mermaid",
@@ -250,6 +256,18 @@
     {
       "source": "diagram_sources/es/lorawan_class_a.mermaid",
       "output": "book/_static/generated/diagrams/es/lorawan_class_a.svg",
+      "type": "mermaid",
+      "format": "svg"
+    },
+    {
+      "source": "diagram_sources/es/lorawan_class_b.mermaid",
+      "output": "book/_static/generated/diagrams/es/lorawan_class_b.svg",
+      "type": "mermaid",
+      "format": "svg"
+    },
+    {
+      "source": "diagram_sources/es/lorawan_class_c.mermaid",
+      "output": "book/_static/generated/diagrams/es/lorawan_class_c.svg",
       "type": "mermaid",
       "format": "svg"
     },

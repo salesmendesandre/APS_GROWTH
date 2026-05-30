@@ -22,9 +22,11 @@ parts:
       - file: en/07_training/03_architecture_security
       - file: en/07_training/04_network_servers
       - file: en/07_training/05_hardware_sensors
+      - file: en/07_training/05b_pcb_interconnection
+      - file: en/07_training/05c_node_assembly
       - file: en/07_training/06_network_configuration
       - file: en/07_training/07_node_programming
-      - file: en/07_training/08_assembly_deployment
+      - file: en/07_training/07b_firmware_code
       - file: en/07_training/09_data_analysis
   - caption: Team
     chapters:

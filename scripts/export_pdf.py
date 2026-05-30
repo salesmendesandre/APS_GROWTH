@@ -699,10 +699,8 @@ def prepare_svg_images_for_latex(latex_build_dir):
 
             cairosvg = cairosvg_module
         except Exception as exc:
-            print("❌ Hay SVGs en el build LaTeX, pero no hay conversor SVG robusto.")
-            print("   Instala resvg con scripts/setup_latex.py --yes, o usa rsvg-convert/CairoSVG.")
-            print(f"   Detalle CairoSVG: {exc}")
-            return False
+            print(f"   ⚠️  CairoSVG no disponible: {exc}. Se usará svglib como fallback.")
+            cairosvg = None
 
     print(f"🖼️  Convirtiendo {len(svg_paths)} SVG(s) a formato LaTeX-safe...")
     replacements = {}

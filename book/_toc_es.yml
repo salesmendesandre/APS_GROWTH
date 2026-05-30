@@ -22,9 +22,11 @@ parts:
       - file: es/07_formacion/03_arquitectura_seguridad
       - file: es/07_formacion/04_network_servers
       - file: es/07_formacion/05_hardware_sensores
+      - file: es/07_formacion/05b_pcb_interconexion
+      - file: es/07_formacion/05c_ensamblaje_nodo
       - file: es/07_formacion/06_configuracion_red
       - file: es/07_formacion/07_programacion_nodo
-      - file: es/07_formacion/08_ensamblaje_despliegue
+      - file: es/07_formacion/07b_codigo_firmware
       - file: es/07_formacion/09_analisis_datos
   - caption: Equipo
     chapters:

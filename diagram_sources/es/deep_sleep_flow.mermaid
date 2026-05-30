@@ -1,0 +1,14 @@
+flowchart TD
+    A([Despertar / Inicio]) --> B{¿Hay claves guardadas?}
+    B -- No --> C[Setup: Iniciar Sensores]
+    C --> D[Enviar Join Request OTAA]
+    D --> E((Evento: EV_JOINED))
+    E --> F[Guardar claves en RAM RTC]
+    F --> G
+    
+    B -- Sí --> G[Setup: Restaurar claves de sesión]
+    G --> H[Leer Sensores y Empaquetar Payload]
+    H --> I[Enviar Datos Uplink]
+    I --> J((Evento: EV_TXCOMPLETE))
+    J --> K[Entrar en Deep Sleep]
+    K -.->|Temporizador| A

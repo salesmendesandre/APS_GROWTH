@@ -1,0 +1,10 @@
+flowchart LR
+    TTN[The Things Network]
+    INT[MQTT / Webhook Integration]
+    DB[(InfluxDB Time-Series)]
+    DASH[Grafana Dashboard]
+
+    TTN -->|Uplink JSON| INT
+    INT -->|Store Data| DB
+    DB -->|Query| DASH
+    User((End User)) -->|Visualize| DASH

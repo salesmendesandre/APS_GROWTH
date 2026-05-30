@@ -1,5 +1,14 @@
 # Extracción y Análisis de Datos
 
+```{admonition} Objetivos de este apartado
+:class: tip
+
+Al finalizar esta sección, deberás ser capaz de:
+- Escribir un decodificador (Payload Formatter) en JavaScript.
+- Configurar integraciones (MQTT/Webhooks) para extraer datos del Network Server.
+- Comprender la utilidad de herramientas como InfluxDB y Grafana para visualizar el resultado final.
+```
+
 Una vez el nodo transmite al Network Server y los datos llegan correctamente a nuestra consola, nos encontraremos con un paquete *uplink* incomprensible (ej. `00F50A52`). Esto se debe a nuestra optimización de *payload* binario.
 
 ## 1. Payload Formatters (Uplink Decoders)
@@ -47,3 +56,13 @@ Arquitectura de extracción e integración de datos.
 ```
 
 De esta manera, el ciclo del dato se completa: desde el campo magnético del *chirp* LoRa emitido en el huerto, hasta un panel de control accesible desde cualquier navegador web.
+
+```{admonition} Autoevaluación
+:class: dropdown
+
+**1. ¿Qué lenguaje de programación se usa típicamente para escribir el Payload Formatter en un Network Server de LoRaWAN?**
+Normalmente se emplea JavaScript. Se proporciona una función `decodeUplink` que recibe un array de bytes y retorna un objeto estructurado.
+
+**2. Si el Network Server es capaz de graficar algunos datos básicos, ¿por qué necesitamos conectarlo a una herramienta externa como Grafana?**
+Los Network Servers están diseñados para enrutar paquetes y gestionar conectividad, no para almacenamiento histórico masivo ni para crear paneles de control complejos de cara a usuarios finales. Una base de datos temporal acoplada a Grafana ofrece mucha más flexibilidad, retención a largo plazo y vistas personalizables.
+```

@@ -122,8 +122,20 @@
       "format": "svg"
     },
     {
+      "source": "diagram_sources/en/deep_sleep_flow.mermaid",
+      "output": "book/_static/generated/diagrams/en/deep_sleep_flow.svg",
+      "type": "mermaid",
+      "format": "svg"
+    },
+    {
       "source": "diagram_sources/en/lora_vs_others.mermaid",
       "output": "book/_static/generated/diagrams/en/lora_vs_others.svg",
+      "type": "mermaid",
+      "format": "svg"
+    },
+    {
+      "source": "diagram_sources/en/lorawan_data.mermaid",
+      "output": "book/_static/generated/diagrams/en/lorawan_data.svg",
       "type": "mermaid",
       "format": "svg"
     },
@@ -244,6 +256,12 @@
     {
       "source": "diagram_sources/es/05_contenidos_basicos_mermaid_05.mermaid",
       "output": "book/_static/generated/diagrams/es/05_contenidos_basicos_mermaid_05.svg",
+      "type": "mermaid",
+      "format": "svg"
+    },
+    {
+      "source": "diagram_sources/es/deep_sleep_flow.mermaid",
+      "output": "book/_static/generated/diagrams/es/deep_sleep_flow.svg",
       "type": "mermaid",
       "format": "svg"
     },

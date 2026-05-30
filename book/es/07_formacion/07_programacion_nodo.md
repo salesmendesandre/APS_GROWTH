@@ -1,5 +1,15 @@
 # Programación del Nodo IoT
 
+```{admonition} Objetivos de este apartado
+:class: tip
+
+Al finalizar esta sección, deberás ser capaz de:
+- Preparar el entorno de desarrollo (Arduino IDE o PlatformIO) para el microcontrolador.
+- Escribir código básico para leer sensores locales (I2C/ADC).
+- Empaquetar los datos de forma binaria para optimizar el envío.
+- Entender y aplicar el ciclo de ahorro de energía (Deep Sleep) asociado a LoRaWAN.
+```
+
 El desarrollo del firmware para el ESP32 se realizará preferiblemente en **PlatformIO** o en el **Arduino IDE**, utilizando C/C++. El objetivo final es leer los sensores, empaquetar los datos de forma ultra-eficiente y enviarlos vía LoRaWAN, minimizando el tiempo que el microcontrolador pasa encendido.
 
 ## 0. Preconfiguración del Entorno (Arduino IDE)
@@ -87,3 +97,21 @@ En lugar de usar la función `delay()` (que mantiene la CPU consumiendo entre 40
 En Deep Sleep, la memoria RAM y la CPU se apagan, reduciendo el consumo a < 10 µA. Solo el coprocesador RTC (Real Time Clock) se queda encendido para despertar al chip tras el tiempo estipulado (ej. 30 minutos).
 
 Al despertar de un Deep Sleep, el ESP32 ejecuta la función `setup()` de nuevo. Para que LMIC no tenga que volver a hacer el proceso de *Join* (lo que gasta mucha batería), guardaremos las claves de sesión dinámicas en la memoria RTC RAM del ESP32 para recuperarlas al despertar.
+
+```{figure} ../../_static/generated/diagrams/es/deep_sleep_flow.svg
+---
+width: 100%
+align: center
+---
+Ciclo de vida del nodo y entrada en modo Deep Sleep tras completar la transmisión.
+```
+
+```{admonition} Autoevaluación
+:class: dropdown
+
+**1. ¿Por qué no debemos enviar JSON a través de LoRaWAN?**
+Porque cada carácter de un JSON ocupa al menos 1 byte. Transmitir texto aumenta drásticamente el tiempo en el aire (*Time on Air*), incrementando el consumo de batería y la probabilidad de colisiones en la red. Siempre debe usarse empaquetado binario.
+
+**2. ¿Qué ocurre con la memoria RAM principal del ESP32 durante el Deep Sleep?**
+La RAM principal se apaga completamente para ahorrar energía, perdiendo todos sus datos. Solo la memoria RTC RAM (alimentada por el reloj de tiempo real) retiene los datos, como por ejemplo, las claves de sesión de la red LoRaWAN.
+```
